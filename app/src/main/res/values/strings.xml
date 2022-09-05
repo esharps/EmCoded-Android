@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">EmCoded</string>
     <string name="app_title">EmCoded</string>
+    <string name="line_number">1</string>
+    <string name="hello_world_hint" translatable="false">x = \\'Hello World!\\'\\nprint(x)</string>
+    <string name="hello_world_command">x = \'Hello World!\'\nprint(x)</string>
 </resources>

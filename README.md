@@ -1,7 +1,7 @@
 # EmCoded-Android
 Code running Android app Coded by Em
 
-HOW TO USE (MVP)
+How to Use (MVP)
 ------------------------------
 1. When the user runs the app, they will be directed to a code editor screen
 2. The code editor contains the line of code that the user needs to type

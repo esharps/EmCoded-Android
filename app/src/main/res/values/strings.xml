@@ -1,7 +1,12 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">EmCoded</string>
     <string name="app_title">EmCoded</string>
     <string name="line_number">1</string>
-    <string name="hello_world_hint" translatable="false">x = \\'Hello World!\\'\\nprint(x)</string>
+    <string name="hello_world_hint" translatable="false">"x = \\'Hello World!\\'\\nprint(x)"</string>
     <string name="hello_world_command">x = \'Hello World!\'\nprint(x)</string>
+    <string name="consolePrompt">"[emcoded]: >"</string>
+    <string name="app_instructs">"Welcome to EmCoded! Let's write our first line of Python code!"</string>
+    <string name="save_txt">Save</string>
+    <string name="clear_txt">Clear</string>
+    <string name="run_txt">"Run Program"</string>
 </resources>

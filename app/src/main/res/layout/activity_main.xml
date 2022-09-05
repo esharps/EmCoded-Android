@@ -1,48 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/purple_500"
     android:textAlignment="textStart"
     android:textDirection="ltr"
     tools:context=".MainActivity">
 
-    <!--    <TextView-->
-    <!--        android:id="@+id/app_title"-->
-    <!--        style="@style/MainTextStyle"-->
-    <!--        android:text="@string/app_title"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintHorizontal_bias="0.107"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+    <com.google.android.material.chip.Chip
+        android:id="@+id/runBtn"
+        android:layout_width="130dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="140dp"
+        android:fontFamily="@font/droid_sans_mono"
+        android:text="@string/run_txt"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/consoleOutput"
+        app:layout_constraintVertical_bias="0.537" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/clearBtn"
+        android:layout_width="100sp"
+        android:layout_height="61dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/droid_sans_mono"
+        android:text="@string/clear_txt"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/runBtn"
+        app:layout_constraintTop_toBottomOf="@+id/consoleOutput" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/saveBtn"
+        android:layout_width="100sp"
+        android:layout_height="61dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="32dp"
+        android:fontFamily="@font/droid_sans_mono"
+        android:text="@string/save_txt"
+        android:textAlignment="center"
+        app:chipSurfaceColor="@color/light_gray_txt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/runBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/consoleOutput"
+        app:layout_constraintVertical_bias="0.48" />
 
     <TextView
         android:id="@+id/lineNumberRows"
-        android:layout_width="40dp"
-        android:layout_height="589dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="142dp"
+        android:layout_width="35dp"
+        android:layout_height="462dp"
+        android:layout_marginTop="64dp"
         android:background="#eeeeee"
         android:gravity="center_horizontal"
-        android:paddingVertical="12sp"
+        android:paddingVertical="10sp"
         android:text="@string/line_number"
-        android:textColor="#616161"
-        android:textSize="18sp" />
+        android:textColor="#546E7A"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@id/codeEditorText"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/codeEditorText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
+        android:layout_width="374dp"
+        android:layout_height="462dp"
         android:layout_marginStart="0sp"
-        android:layout_marginTop="1sp"
-        android:layout_marginEnd="1sp"
-        android:layout_toEndOf="@+id/lineNumberRows"
         android:autofillHints="true"
+        android:background="@color/cardview_light_background"
         android:ems="10"
         android:fontFamily="@font/droid_sans_mono"
         android:gravity="start|fill_horizontal"
@@ -52,21 +81,55 @@
         android:padding="10sp"
         android:singleLine="true"
         android:textColorHighlight="#5367DF"
-        android:textColorHint="#C3C3C3"
+        android:textColorHint="#9E9E9E"
         android:textColorLink="#5E35B1"
         android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/lineNumberRows"
+        app:layout_constraintTop_toTopOf="@+id/lineNumberRows"
         tools:ignore="TextContrastCheck" />
 
-    <TextView
-        android:id="@+id/console"
-        android:layout_toEndOf="@id/codeEditorText"
-        android:layout_width="match_parent"
-        android:layout_height="97dp"
-        android:layout_below="@+id/lineNumberRows"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="20sp"
-        android:layout_marginBottom="40sp"
-        android:text="TextView" />
+    <EditText
+        android:id="@+id/consoleOutput"
+        android:layout_width="393dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="8dp"
+        android:background="#2C3E50"
+        android:ems="10"
+        android:fontFamily="@font/droid_sans_mono"
+        android:gravity="start|top"
+        android:hint="@string/consolePrompt"
+        android:textColor="#B8C2FF"
+        android:textColorHighlight="#3949AB"
+        android:textColorHint="#B8C2FF"
+        android:textColorLink="@color/purple_200"
+        android:textSize="14sp"
+        android:inputType="text"
+        app:flow_horizontalAlign="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lineNumberRows" />
+
+    <EditText
+        android:id="@+id/directions"
+        android:layout_width="407dp"
+        android:layout_height="62dp"
+        android:ems="10"
+        android:fontFamily="@font/inconsolata"
+        android:includeFontPadding="false"
+        android:inputType="textMultiLine"
+        android:text="@string/app_instructs"
+        android:textAlignment="center"
+        android:textColor="#D9CEF1"
+        android:textColorHighlight="@color/purple_200"
+        android:textColorLink="#5E35B1"
+        android:textSize="19sp"
+        app:layout_constraintBottom_toTopOf="@+id/codeEditorText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="TouchTargetSizeCheck" />
 
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

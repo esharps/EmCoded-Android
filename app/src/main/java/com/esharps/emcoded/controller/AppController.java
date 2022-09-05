@@ -6,7 +6,12 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 
-// Code to create Singleton class that will govern the entire project
+/**
+ * Not used for project MVP
+ * Code to create Singleton class that will govern the entire project
+ * TODO: Utilize class for classic MVC model implementation
+ */
+
 public class AppController extends Application {
     private static AppController instance;
     private RequestQueue requestQueue;

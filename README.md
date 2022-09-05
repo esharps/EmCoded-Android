@@ -1,5 +1,5 @@
 # EmCoded-Android
-Code running Android app Coded by Em
+Code editing app that Em coded
 
 How to Use (MVP)
 ------------------------------
